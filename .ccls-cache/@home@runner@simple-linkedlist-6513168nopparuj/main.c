@@ -26,14 +26,15 @@ int main(int argc, const char * argv[]) {
     p->value =c+i+1;
     p->next=NULL;
     /*
-    
     p->next->value=head->value+3;
     p->next->next= (NodePtr) malloc(sizeof(Node));
     p->next->next->value=11;
-    p->next->next->next=NULL;*/
+    p->next->next->next=NULL;
+    */
   
     }
-    /*printf("%d\n", head ->value ); //what value for 5
+    /*
+    printf("%d\n", head ->value ); //what value for 5
     printf("%d\n", head ->next->value ); //what value for 8
     printf("%d\n", head->next->next->value );
     printf("%d\n", head->next->next->next->value );
@@ -94,6 +95,12 @@ int main(int argc, const char * argv[]) {
          //use a loop to help
           
      */
-    
+    tmp=head;
+    while(tmp!=NULL){
+            printf("deleting %d\n",tmp->value);
+            struct node *next = tmp->next;
+            free(tmp);
+            tmp=next;
+        }
     return 0;
 }
